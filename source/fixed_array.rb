@@ -29,3 +29,4 @@ test = FixedArray.new(4)
 p test
 p test.get(3)
 p test.set(2, "hello")
+p test.set(1, "yo")
