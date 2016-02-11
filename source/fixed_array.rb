@@ -1,3 +1,5 @@
+require_relative "out_of_bounds"
+
 class FixedArray
 
 	attr_reader :fixed_array
@@ -8,7 +10,8 @@ class FixedArray
 
 	def get(index)
 		if index > @fixed_array.size
-			raise ArgumentError, "Index exceeds size of array"
+			
+			raise OutOfBoundsException, "Index exceeds size of array"
 		end
 		@fixed_array[index]
 	end
@@ -16,7 +19,7 @@ class FixedArray
 	def set(index, element)
 
 		if index > @fixed_array.size
-			raise ArgumentError, "Index exceeds size of array"
+			raise OutOfBoundsException, "Index exceeds size of array"
 		end
 		@fixed_array[index] = element 
 		return @fixed_array[index]
@@ -24,9 +27,7 @@ class FixedArray
 
 end
 
-test = FixedArray.new(4)
 
-p test
-p test.get(3)
-p test.set(2, "hello")
-p test.set(1, "yo")
+
+
+
